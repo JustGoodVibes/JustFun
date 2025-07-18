@@ -87,6 +87,11 @@ function MoonFallGame() {
         </div>
       </div>
 
+      {/* Instructions Banner */}
+      <div className="instructions-banner">
+        <p>📜 Scroll down to watch the Moon's catastrophic journey to Earth! Use Survival Mode to prepare for the disaster.</p>
+      </div>
+
       {/* Progress indicator */}
       <div className="progress-bar">
         <div

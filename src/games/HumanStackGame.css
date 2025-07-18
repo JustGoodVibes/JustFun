@@ -1,10 +1,11 @@
 .human-stack-game {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height, 80px));
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   display: grid;
   grid-template-columns: 400px 1fr;
   color: white;
   font-family: 'Inter', sans-serif;
+  padding-top: 0;
 }
 
 .controls-panel {
@@ -372,18 +373,27 @@
 }
 
 @media (max-width: 768px) {
+  .human-stack-game {
+    min-height: calc(100vh - var(--header-height-mobile, 120px));
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
   .controls-panel {
     padding: 1rem;
+    max-height: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   .visualization-area {
     padding: 1rem;
   }
-  
+
   .height-display h2 {
     font-size: 1.5rem;
   }
-  
+
   .object-grid, .count-grid {
     grid-template-columns: repeat(2, 1fr);
   }

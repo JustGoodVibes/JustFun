@@ -3,51 +3,71 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .hero-section {
-  padding: 4rem 2rem 2rem;
+  padding: 6rem 2rem 4rem;
   text-align: center;
   color: white;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 800;
-  margin-bottom: 1rem;
-  background: linear-gradient(45deg, #ffffff, #e2e8f0);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #ffd700, #ff6b6b, #4ecdc4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+  line-height: 1.2;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 4vw, 1.5rem);
   font-weight: 400;
-  opacity: 0.9;
+  opacity: 0.95;
   line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .games-section {
   flex: 1;
-  padding: 2rem;
+  padding: 3rem 2rem;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
+  position: relative;
 }
 
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -64,12 +84,16 @@
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
 }
 
 .game-card:hover {
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 .game-icon {
@@ -81,6 +105,7 @@
   justify-content: center;
   flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 1.5rem;
 }
 
 .game-info {
@@ -110,62 +135,98 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .games-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .games-section {
+    padding: 2rem 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
-    padding: 2rem 1rem 1rem;
+    padding: 4rem 1rem 2rem;
+    min-height: 50vh;
   }
-  
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-  
+
   .games-section {
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
-  
+
   .games-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
-  
+
   .game-card {
-    padding: 1rem;
+    padding: 1.25rem;
+    min-height: 100px;
   }
-  
+
   .game-icon {
     width: 50px;
     height: 50px;
+    font-size: 1.25rem;
   }
-  
+
   .game-title {
     font-size: 1.1rem;
   }
-  
+
   .game-description {
     font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
+  .hero-section {
+    padding: 3rem 1rem 2rem;
+    min-height: 40vh;
   }
-  
+
+  .games-section {
+    padding: 1.5rem 0.75rem;
+  }
+
   .games-grid {
-    grid-template-columns: 1fr;
+    gap: 1rem;
   }
-  
+
   .game-card {
+    padding: 1rem;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    gap: 0.75rem;
+    min-height: auto;
   }
-  
+
+  .game-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
   .game-info {
     text-align: center;
+    width: 100%;
+  }
+
+  .game-title {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .game-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.85rem;
   }
 }

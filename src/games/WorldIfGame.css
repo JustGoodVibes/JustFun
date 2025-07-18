@@ -1,8 +1,9 @@
 .world-if-game {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height, 80px));
   background: linear-gradient(135deg, #0c4a6e 0%, #1e40af 50%, #7c3aed 100%);
   color: white;
   font-family: 'Inter', sans-serif;
+  padding-top: 0;
 }
 
 .game-header {
@@ -370,27 +371,36 @@
 }
 
 @media (max-width: 768px) {
+  .world-if-game {
+    min-height: calc(100vh - var(--header-height-mobile, 120px));
+  }
+
   .game-header {
     padding: 1rem;
   }
-  
+
   .game-header h1 {
     font-size: 2rem;
   }
-  
+
   .game-content {
     padding: 1rem;
+    grid-template-columns: 1fr;
   }
-  
+
+  .earth-section {
+    position: static;
+  }
+
   .events-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .earth-container {
     width: 200px;
     height: 200px;
   }
-  
+
   .earth {
     font-size: 4rem;
   }
