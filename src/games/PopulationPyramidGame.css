@@ -1,0 +1,311 @@
+.population-pyramid-game {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #581c87 100%);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  padding: 2rem;
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.game-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(45deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.controls-panel {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.country-selector, .comparison-selector, .year-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.controls-panel label {
+  font-weight: 600;
+  color: #fbbf24;
+  font-size: 0.9rem;
+}
+
+.controls-panel select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.controls-panel input[type="range"] {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.year-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.year-buttons button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.year-buttons button:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.year-buttons button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pyramid-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pyramid-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pyramid-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #fbbf24;
+}
+
+.comparison-title {
+  display: block;
+  font-size: 1.2rem;
+  color: #60a5fa;
+  margin-top: 0.5rem;
+}
+
+.pyramid-chart {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.age-labels {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.25rem;
+}
+
+.age-label {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #d1d5db;
+  padding-right: 0.5rem;
+}
+
+.pyramid-bars {
+  display: contents;
+}
+
+.male-side, .female-side {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.25rem;
+}
+
+.male-side h3, .female-side h3 {
+  text-align: center;
+  margin: 0 0 1rem 0;
+  color: #fbbf24;
+  font-size: 1.1rem;
+}
+
+.male-side {
+  text-align: right;
+}
+
+.female-side {
+  text-align: left;
+}
+
+.population-bar {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.population-bar.male {
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  justify-content: flex-end;
+  padding-right: 0.5rem;
+}
+
+.population-bar.female {
+  background: linear-gradient(90deg, #ec4899, #be185d);
+  justify-content: flex-start;
+  padding-left: 0.5rem;
+}
+
+.population-bar:hover {
+  transform: scaleY(1.1);
+  z-index: 10;
+}
+
+.bar-value {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.statistics-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #fbbf24;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.historical-events {
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid #fbbf24;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.historical-events h3 {
+  margin: 0 0 0.75rem 0;
+  color: #fbbf24;
+  font-size: 1.1rem;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.event {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  border-left: 3px solid #fbbf24;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .pyramid-chart {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  
+  .age-labels {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+  
+  .male-side {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  
+  .female-side {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .population-pyramid-game {
+    padding: 1rem;
+  }
+  
+  .game-header h1 {
+    font-size: 2rem;
+  }
+  
+  .controls-panel {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .pyramid-container {
+    padding: 1rem;
+  }
+  
+  .statistics-panel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bar-value {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .statistics-panel {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparison-title {
+    font-size: 1rem;
+  }
+}

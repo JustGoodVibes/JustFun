@@ -1,0 +1,522 @@
+/* Time Mall Hub Styles */
+.time-mall-hub {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);
+  padding: 2rem;
+  color: white;
+}
+
+.mall-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mall-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ffd700, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mall-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.eras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.era-card {
+  border-radius: 16px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.era-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: brightness(1.1);
+  z-index: -1;
+}
+
+.era-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.era-period {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.era-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.era-budget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.budget-amount {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.era-enter {
+  text-align: center;
+  font-weight: 600;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.era-card:hover .era-enter {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(5px);
+}
+
+/* Time Shop Styles */
+.time-shop {
+  min-height: 100vh;
+  padding: 2rem;
+  transition: all 0.5s ease;
+}
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.shop-info {
+  text-align: center;
+}
+
+.shop-info h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.shop-info p {
+  margin: 0.5rem 0 0 0;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.budget-display {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.budget-display span {
+  font-weight: 600;
+}
+
+.products-section {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.9);
+  color: #2d3748;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.product-card.unaffordable {
+  opacity: 0.6;
+  border-color: #dc2626;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.product-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #1a202c;
+}
+
+.product-category {
+  background: #3b82f6;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.product-description {
+  color: #4a5568;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.product-pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.modern-value {
+  font-size: 0.9rem;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.buy-button {
+  width: 100%;
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.buy-button:hover:not(:disabled) {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.buy-button:disabled {
+  background: #dc2626;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Shopping Cart Styles */
+.shopping-cart {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-width: 300px;
+  max-width: 350px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.shopping-cart h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.cart-items {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.cart-item span:first-child {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.remove-button {
+  background: #dc2626;
+  color: white;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.cart-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.investment-button, .clear-cart-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.investment-button:hover {
+  background: #2563eb;
+}
+
+.clear-cart-button {
+  background: #dc2626;
+}
+
+.clear-cart-button:hover {
+  background: #b91c1c;
+}
+
+/* Investment Modal Styles */
+.investment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.investment-modal {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.investment-modal h3 {
+  color: #fbbf24;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.investment-results {
+  margin: 1.5rem 0;
+}
+
+.investment-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.investment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.item-name {
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.original-price {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.investment-outcome {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0.75rem;
+}
+
+.current-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #22c55e;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.outcome-description {
+  font-style: italic;
+  opacity: 0.8;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.investment-summary {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(34, 197, 94, 0.2);
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border: 1px solid #22c55e;
+}
+
+.close-investment {
+  display: block;
+  margin: 1.5rem auto 0;
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-investment:hover {
+  background: #b91c1c;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .products-section {
+    grid-template-columns: 1fr;
+  }
+
+  .shopping-cart {
+    max-width: none;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .time-mall-hub, .time-shop {
+    padding: 1rem;
+  }
+
+  .mall-header h1 {
+    font-size: 2rem;
+  }
+
+  .eras-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .era-card {
+    padding: 1.5rem;
+  }
+
+  .shop-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .budget-display {
+    text-align: center;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .investment-modal {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}

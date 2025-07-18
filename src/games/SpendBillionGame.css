@@ -1,0 +1,349 @@
+.pharaoh-game {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #8b4513 100%);
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(184, 134, 11, 0.3) 0%, transparent 50%);
+  padding: 2rem;
+  font-family: 'Georgia', serif;
+}
+
+.pharaoh-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  color: #d4af37;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 2px solid #d4af37;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.wealth-display {
+  flex: 1;
+}
+
+.wealth-label {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.wealth-amount {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.wealth-progress {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.wealth-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ffd700, #d4af37);
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.wealth-spent {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.reset-button {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.reset-button:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.category-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid transparent;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #8b4513;
+}
+
+.category-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.category-btn.active {
+  background: #d4af37;
+  color: white;
+  border-color: #b8860b;
+}
+
+.category-icon {
+  font-size: 1.2rem;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.item-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 2px solid #d4af37;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.item-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, #ffd700, #d4af37);
+}
+
+.item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.item-card.unaffordable {
+  opacity: 0.6;
+  border-color: #dc2626;
+}
+
+.item-card.unaffordable::before {
+  background: #dc2626;
+}
+
+.item-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.item-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #8b4513;
+  margin-bottom: 0.25rem;
+}
+
+.item-price {
+  font-size: 1rem;
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.info-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.info-button:hover {
+  background: #2563eb;
+  transform: scale(1.1);
+}
+
+.item-description {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.quantity-btn {
+  background: #d4af37;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.quantity-btn:hover:not(:disabled) {
+  background: #b8860b;
+  transform: scale(1.1);
+}
+
+.quantity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.quantity {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #8b4513;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.item-details {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.detail-section {
+  margin-bottom: 1rem;
+}
+
+.detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.detail-section strong {
+  color: #8b4513;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.detail-section p {
+  color: #6b7280;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.purchase-summary {
+  background: rgba(0, 0, 0, 0.8);
+  color: #d4af37;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.purchase-summary h3 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.summary-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pharaoh-game {
+    padding: 1rem;
+  }
+  
+  .pharaoh-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .wealth-amount {
+    font-size: 1.5rem;
+  }
+  
+  .items-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .item-card {
+    padding: 1rem;
+  }
+  
+  .category-filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .category-btn {
+    flex-shrink: 0;
+  }
+}
